@@ -24,7 +24,7 @@ import org.example.demo.ticket.model.recherche.ticket.RechercheTicket;
 @Produces(MediaType.APPLICATION_JSON)
 public class TicketResource {
 	
-	private ManagerFactory managerFactory = new ManagerFactory();
+	private ManagerFactory managerFactory = ManagerFactory.getInstance();
 
     /**
      * Renvoie le {@link Ticket} de numéro {@code pNumero}

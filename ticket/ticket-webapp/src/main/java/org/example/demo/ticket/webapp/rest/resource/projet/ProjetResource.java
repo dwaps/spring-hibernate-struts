@@ -22,7 +22,7 @@ import org.example.demo.ticket.model.exception.NotFoundException;
 @Produces(MediaType.APPLICATION_JSON)
 public class ProjetResource {
 	
-	private ManagerFactory managerFactory = new ManagerFactory();
+	private ManagerFactory managerFactory = ManagerFactory.getInstance();
 
     /**
      * Renvoie le {@link Projet} d'identifiant {@code pId}
