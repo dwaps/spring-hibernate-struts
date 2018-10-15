@@ -32,7 +32,7 @@ public class ProjetResource extends AbstractResource {
     @GET
     @Path("{id}")
     public Projet get(@PathParam("id") Integer pId) throws NotFoundException {
-        Projet vProjet = managerFactory.getProjetManager().getProjet(pId);
+        Projet vProjet = getManagerFactory().getProjetManager().getProjet(pId);
         return vProjet;
     }
 
@@ -44,7 +44,7 @@ public class ProjetResource extends AbstractResource {
      */
     @GET
     public List<Projet> get() {
-        List<Projet> vListProjet = managerFactory.getProjetManager().getListProjet();
+        List<Projet> vListProjet = getManagerFactory().getProjetManager().getListProjet();
         return vListProjet;
     }
 }

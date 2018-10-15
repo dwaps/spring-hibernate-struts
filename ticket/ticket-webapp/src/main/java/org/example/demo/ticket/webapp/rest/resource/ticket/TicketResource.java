@@ -34,7 +34,7 @@ public class TicketResource extends AbstractResource {
     @GET
     @Path("{numero}")
     public Ticket get(@PathParam("numero") Long pNumero) throws NotFoundException {
-        Ticket vTicket = managerFactory.getTicketManager().getTicket(pNumero);
+        Ticket vTicket = getManagerFactory().getTicketManager().getTicket(pNumero);
         return vTicket;
     }
 
@@ -47,7 +47,7 @@ public class TicketResource extends AbstractResource {
     @GET
     @Path("search")
     public List<Ticket> search(@QueryParam("projetId") Integer pProjetId) {
-        List<Ticket> vList = managerFactory.getTicketManager().getListTicket(new RechercheTicket()
+        List<Ticket> vList = getManagerFactory().getTicketManager().getListTicket(new RechercheTicket()
                                                               .setProjetId(pProjetId));
         return vList;
     }
