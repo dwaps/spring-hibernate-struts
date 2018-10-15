@@ -21,6 +21,8 @@ import org.example.demo.ticket.model.exception.NotFoundException;
 @Path("/projets")
 @Produces(MediaType.APPLICATION_JSON)
 public class ProjetResource {
+	
+	private ManagerFactory managerFactory = new ManagerFactory();
 
     /**
      * Renvoie le {@link Projet} d'identifiant {@code pId}
@@ -32,7 +34,6 @@ public class ProjetResource {
     @GET
     @Path("{id}")
     public Projet get(@PathParam("id") Integer pId) throws NotFoundException {
-        ManagerFactory managerFactory = new ManagerFactory();
         Projet vProjet = managerFactory.getProjetManager().getProjet(pId);
         return vProjet;
     }
@@ -45,7 +46,6 @@ public class ProjetResource {
      */
     @GET
     public List<Projet> get() {
-    	ManagerFactory managerFactory = new ManagerFactory();
         List<Projet> vListProjet = managerFactory.getProjetManager().getListProjet();
         return vListProjet;
     }

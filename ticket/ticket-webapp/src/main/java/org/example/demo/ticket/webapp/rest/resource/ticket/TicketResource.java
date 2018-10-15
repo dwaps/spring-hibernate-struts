@@ -23,7 +23,8 @@ import org.example.demo.ticket.model.recherche.ticket.RechercheTicket;
 @Path("/tickets")
 @Produces(MediaType.APPLICATION_JSON)
 public class TicketResource {
-
+	
+	private ManagerFactory managerFactory = new ManagerFactory();
 
     /**
      * Renvoie le {@link Ticket} de numéro {@code pNumero}
@@ -35,7 +36,6 @@ public class TicketResource {
     @GET
     @Path("{numero}")
     public Ticket get(@PathParam("numero") Long pNumero) throws NotFoundException {
-        ManagerFactory managerFactory = new ManagerFactory();
         Ticket vTicket = managerFactory.getTicketManager().getTicket(pNumero);
         return vTicket;
     }
@@ -49,7 +49,6 @@ public class TicketResource {
     @GET
     @Path("search")
     public List<Ticket> search(@QueryParam("projetId") Integer pProjetId) {
-        ManagerFactory managerFactory = new ManagerFactory();
         List<Ticket> vList = managerFactory.getTicketManager().getListTicket(new RechercheTicket()
                                                               .setProjetId(pProjetId));
         return vList;
