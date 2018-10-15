@@ -57,6 +57,7 @@
         <module>ticket-consumer</module>
         <module>ticket-model</module>
         <module>ticket-technical</module>
+        <module>ticket-api</module>
     </modules>
 
 
@@ -94,6 +95,11 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>ticket-technical</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>ticket-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

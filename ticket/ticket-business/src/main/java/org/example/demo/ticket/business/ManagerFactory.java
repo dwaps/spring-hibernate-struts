@@ -1,14 +1,11 @@
 package org.example.demo.ticket.business;
 
-import org.example.demo.ticket.business.manager.ProjetManager;
-import org.example.demo.ticket.business.manager.TicketManager;
-
 public final class ManagerFactory {
 	
 	private static ManagerFactory INSTANCE;
 	
-	private ProjetManager projetManager;
-	private TicketManager ticketManager;
+	private IProjetManager projetManager;
+	private ITicketManager ticketManager;
 	
 	static { INSTANCE = new ManagerFactory(); }
 	private ManagerFactory() {}
@@ -19,19 +16,19 @@ public final class ManagerFactory {
 	
 	// GETTERS AND SETTERS
 	
-	public void setProjetManager(ProjetManager projetManager) {
+	public void setProjetManager(IProjetManager projetManager) {
 		this.projetManager = projetManager;
 	}
 	
-	public void setTicketManager(TicketManager ticketManager) {
+	public void setTicketManager(ITicketManager ticketManager) {
 		this.ticketManager = ticketManager;
 	}
 	
-	public ProjetManager getProjetManager() {
+	public IProjetManager getProjetManager() {
 		return projetManager;
 	}
 	
-	public TicketManager getTicketManager() {
+	public ITicketManager getTicketManager() {
 		return ticketManager;
 	}
 	
