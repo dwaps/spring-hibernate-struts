@@ -11,6 +11,7 @@ import javax.ws.rs.core.MediaType;
 
 import org.example.demo.ticket.model.bean.ticket.Ticket;
 import org.example.demo.ticket.model.exception.NotFoundException;
+import org.example.demo.ticket.model.recherche.ticket.RechercheTicket;
 import org.example.demo.ticket.webapp.rest.resource.AbstractResource;
 
 
@@ -46,7 +47,8 @@ public class TicketResource extends AbstractResource {
     @GET
     @Path("search")
     public List<Ticket> search(@QueryParam("projetId") Integer pProjetId) {
-        List<Ticket> vList = getManagerFactory().getTicketManager().getList();
+        List<Ticket> vList = getManagerFactory().getTicketManager().getList(new RechercheTicket()
+                .setProjetId(pProjetId));
         return vList;
     }
 }

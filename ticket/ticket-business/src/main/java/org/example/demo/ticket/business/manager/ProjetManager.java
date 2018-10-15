@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.example.demo.ticket.model.bean.projet.Projet;
 import org.example.demo.ticket.model.exception.NotFoundException;
+import org.example.demo.ticket.model.recherche.projet.RechercheProjet;
 import org.ticket.api.IManager;
 
 
@@ -14,7 +15,7 @@ import org.ticket.api.IManager;
  *
  * @author lgu
  */
-public class ProjetManager implements IManager<Projet> {
+public class ProjetManager implements IManager<Projet, RechercheProjet> {
 
     /**
      * Renvoie le projet demandé
@@ -53,4 +54,10 @@ public class ProjetManager implements IManager<Projet> {
         }
         return vList;
     }
+
+	@Override
+	public List<Projet> getList(RechercheProjet search) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

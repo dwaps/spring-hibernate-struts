@@ -18,7 +18,7 @@ import org.ticket.api.IManager;
  *
  * @author lgu
  */
-public class TicketManager implements IManager<Ticket> {
+public class TicketManager implements IManager<Ticket, RechercheTicket> {
 
     /**
      * Cherche et renvoie le {@link Ticket} numéro {@code pNumero}
@@ -58,7 +58,8 @@ public class TicketManager implements IManager<Ticket> {
         return vList;
 	}
 	
-    public List<Ticket> getListTicket(RechercheTicket pRechercheTicket) {
+	@Override
+    public List<Ticket> getList(RechercheTicket pRechercheTicket) {
         // Je n'ai pas encore codé la DAO
         // Je mets juste un code temporaire pour commencer le cours...
         List<Ticket> vList = new ArrayList<>();
