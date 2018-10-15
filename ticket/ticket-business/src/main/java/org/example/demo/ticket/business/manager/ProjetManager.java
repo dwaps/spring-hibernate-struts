@@ -4,9 +4,9 @@ package org.example.demo.ticket.business.manager;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.example.demo.ticket.business.IProjetManager;
 import org.example.demo.ticket.model.bean.projet.Projet;
 import org.example.demo.ticket.model.exception.NotFoundException;
+import org.ticket.api.IManager;
 
 
 /**
@@ -14,7 +14,7 @@ import org.example.demo.ticket.model.exception.NotFoundException;
  *
  * @author lgu
  */
-public class ProjetManagerImpl implements IProjetManager {
+public class ProjetManager implements IManager<Projet> {
 
     /**
      * Renvoie le projet demandé
@@ -24,14 +24,14 @@ public class ProjetManagerImpl implements IProjetManager {
      * @throws NotFoundException Si le projet n'est pas trouvé
      */
 	@Override
-    public Projet getProjet(Integer pId) throws NotFoundException {
+	public Projet getOne(Long pNumero) throws NotFoundException {
         // Je n'ai pas encore codé la DAO
         // Je mets juste un code temporaire pour commencer le cours...
-        if (pId < 1) {
-            throw new NotFoundException("Projet non trouvé : ID=" + pId);
+        if (pNumero < 1) {
+            throw new NotFoundException("Projet non trouvé : ID=" + pNumero);
         }
-        Projet vProjet = new Projet(pId);
-        vProjet.setNom("Projet n°" + pId);
+        Projet vProjet = new Projet(Math.toIntExact(pNumero));
+        vProjet.setNom("Projet n°" + pNumero);
         return vProjet;
     }
 
@@ -42,7 +42,7 @@ public class ProjetManagerImpl implements IProjetManager {
      * @return List
      */
 	@Override
-    public List<Projet> getListProjet() {
+	public List<Projet> getList() {
         // Je n'ai pas encore codé la DAO
         // Je mets juste un code temporaire pour commencer le cours...
         List<Projet> vList = new ArrayList<>();

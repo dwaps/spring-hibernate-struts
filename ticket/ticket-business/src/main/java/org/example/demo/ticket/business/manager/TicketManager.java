@@ -4,13 +4,13 @@ package org.example.demo.ticket.business.manager;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.example.demo.ticket.business.ITicketManager;
 import org.example.demo.ticket.model.bean.projet.Projet;
 import org.example.demo.ticket.model.bean.ticket.Bug;
 import org.example.demo.ticket.model.bean.ticket.Evolution;
 import org.example.demo.ticket.model.bean.ticket.Ticket;
 import org.example.demo.ticket.model.exception.NotFoundException;
 import org.example.demo.ticket.model.recherche.ticket.RechercheTicket;
+import org.ticket.api.IManager;
 
 
 /**
@@ -18,7 +18,7 @@ import org.example.demo.ticket.model.recherche.ticket.RechercheTicket;
  *
  * @author lgu
  */
-public class TicketManagerImpl implements ITicketManager {
+public class TicketManager implements IManager<Ticket> {
 
     /**
      * Cherche et renvoie le {@link Ticket} numéro {@code pNumero}
@@ -28,7 +28,7 @@ public class TicketManagerImpl implements ITicketManager {
      * @throws NotFoundException Si le Ticket n'est pas trouvé
      */
 	@Override
-    public Ticket getTicket(Long pNumero) throws NotFoundException {
+	public Ticket getOne(Long pNumero) throws NotFoundException {
         // Je n'ai pas encore codé la DAO
         // Je mets juste un code temporaire pour commencer le cours...
         if (pNumero < 1L) {
@@ -47,6 +47,17 @@ public class TicketManagerImpl implements ITicketManager {
      * @return List
      */
 	@Override
+	public List<Ticket> getList() {
+        // Je n'ai pas encore codé la DAO
+        // Je mets juste un code temporaire pour commencer le cours...
+        List<Ticket> vList = new ArrayList<>();
+        for (int vI = 0; vI < 9; vI++) {
+            Ticket vTicket = new Evolution((long) vI);
+            vList.add(vTicket);
+        }
+        return vList;
+	}
+	
     public List<Ticket> getListTicket(RechercheTicket pRechercheTicket) {
         // Je n'ai pas encore codé la DAO
         // Je mets juste un code temporaire pour commencer le cours...
