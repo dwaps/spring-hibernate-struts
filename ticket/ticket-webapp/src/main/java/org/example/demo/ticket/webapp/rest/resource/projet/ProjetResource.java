@@ -32,7 +32,7 @@ public class ProjetResource extends AbstractResource {
     @GET
     @Path("{id}")
     public Projet get(@PathParam("id") Long pId) throws Exception {
-        Projet vProjet = getManagerFactory().getProjetManager().getOne(pId);
+        Projet vProjet = managerFactory.getProjetManager().getOne(pId);
         return vProjet;
     }
 
@@ -44,7 +44,7 @@ public class ProjetResource extends AbstractResource {
      */
     @GET
     public List<Projet> get() {
-        List<Projet> vListProjet = getManagerFactory().getProjetManager().getList();
+        List<Projet> vListProjet = managerFactory.getProjetManager().getList();
         return vListProjet;
     }
 }

@@ -4,11 +4,10 @@ package org.example.demo.ticket.business.manager;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.inject.Named;
-
 import org.example.demo.ticket.model.bean.projet.Projet;
 import org.example.demo.ticket.model.exception.NotFoundException;
 import org.example.demo.ticket.model.recherche.projet.RechercheProjet;
+import org.springframework.stereotype.Component;
 import org.ticket.api.IManager;
 
 
@@ -17,7 +16,7 @@ import org.ticket.api.IManager;
  *
  * @author lgu
  */
-@Named
+@Component
 public class ProjetManager implements IManager<Projet, RechercheProjet> {
 
     /**

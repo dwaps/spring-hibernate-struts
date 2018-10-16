@@ -1,15 +1,19 @@
 package org.example.demo.ticket.webapp.rest.resource;
 
 import org.example.demo.ticket.business.ManagerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public abstract class AbstractResource {
-	protected static ManagerFactory managerFactory;
 	
-	protected static ManagerFactory getManagerFactory() {
-		return managerFactory;
-	}
+	protected ManagerFactory managerFactory;
 	
-	public static void setManagerFactory(ManagerFactory managerFactory) {
-		AbstractResource.managerFactory = managerFactory;
+	@Autowired
+	public AbstractResource(ManagerFactory managerFactory) {
+		System.out.println("\n\n**************************\n"
+				+ "DWAPS INFO ==> managerFactory ? : " + managerFactory
+				+ "\n****************************\n\n");
+		this.managerFactory = managerFactory;
 	}
+	public AbstractResource() {}
+	
 }

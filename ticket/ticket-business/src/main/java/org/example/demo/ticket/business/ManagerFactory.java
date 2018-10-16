@@ -1,23 +1,22 @@
 package org.example.demo.ticket.business;
 
-import javax.inject.Inject;
-import javax.inject.Named;
-
 import org.example.demo.ticket.model.bean.projet.Projet;
 import org.example.demo.ticket.model.bean.ticket.Ticket;
 import org.example.demo.ticket.model.recherche.projet.RechercheProjet;
 import org.example.demo.ticket.model.recherche.ticket.RechercheTicket;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.ticket.api.IManager;
 
-@Named
+@Component
 public final class ManagerFactory {
 	
 	private static ManagerFactory INSTANCE;
 	
-	@Inject
+	@Autowired
 	private IManager<Projet, RechercheProjet> projetManager;
 	
-	@Inject
+	@Autowired
 	private IManager<Ticket, RechercheTicket> ticketManager;
 	
 	static { INSTANCE = new ManagerFactory(); }
