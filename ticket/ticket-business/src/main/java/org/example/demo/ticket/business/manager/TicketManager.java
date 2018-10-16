@@ -4,6 +4,8 @@ package org.example.demo.ticket.business.manager;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Named;
+
 import org.example.demo.ticket.model.bean.projet.Projet;
 import org.example.demo.ticket.model.bean.ticket.Bug;
 import org.example.demo.ticket.model.bean.ticket.Evolution;
@@ -18,6 +20,7 @@ import org.ticket.api.IManager;
  *
  * @author lgu
  */
+@Named
 public class TicketManager implements IManager<Ticket, RechercheTicket> {
 
     /**

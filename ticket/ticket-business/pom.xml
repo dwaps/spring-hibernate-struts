@@ -45,6 +45,10 @@
 
 
         <!-- ===== Bibliothèques tierces ===== -->
+        <dependency>
+        	<groupId>javax.inject</groupId>
+        	<artifactId>javax.inject</artifactId>
+        </dependency>
 
 
         <!-- ===== Tests ===== -->
