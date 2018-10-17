@@ -1,12 +1,25 @@
-## Simplifiez le développement d'applications Java avec Spring
+![](https://www.dwaps.fr/img/logo-300.png)
 
-Ceci est le dépôt associé au cours
-[_Simplifiez le développement d'applications Java avec Spring_](https://openclassrooms.com/courses/simplifiez-le-developpement-dapplications-java-avec-spring)
-sur [_OpenClassrooms_](https://www.openclassrooms.com).
+# FORMATION SPRING
+L'entreprise **DWAPS Formation** a été créée le 1er Octobre 2015.
 
+Sa vocation est de former des développeurs web et mobile.
 
-### Contenu
+Rendez-vous sur le site **[dwaps.fr](http://dwaps.fr "DWAPS")** pour plus d'informations.
 
--   `db` : les éléments de création de la base de données _DB_TICKET_
--   `docker` : les éléments docker/docker-compose pour monter un environnement de développement avec [docker](https://www.docker.com)
--   `ticket` : les sources du projet de gestion de tickets
+---
+
+# Installation
+## 1. Récupération du code des modules
+
+  a. Choisissez un emplacement sur votre ordinateur et saisissez la commande suivante dans un terminal :
+    
+    git clone https://github.com/dwaps/formation-spring
+
+OU BIEN,
+
+  b. Télécharger l'archive zip [https://github.com/dwaps/formation-spring/archive/master.zip](https://github.com/dwaps/formation-spring/archive/master.zip). Il vous suffira ensuite de la décompresser ou vous voulez pour travailler.
+
+---
+
+[® DWAPS Formation - Michael Cornillon] (http://dwaps.fr "DWAPS")
