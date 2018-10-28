@@ -1,7 +1,11 @@
 package fr.dwaps.shs.controller;
 
-import static fr.dwaps.shs.utils.Constants.*;
+import static fr.dwaps.shs.utils.Constants.CLIENT_ALL_JSP;
 import static fr.dwaps.shs.utils.Constants.CLIENT_ALL_URI;
+import static fr.dwaps.shs.utils.Constants.CLIENT_DELETE_JSP;
+import static fr.dwaps.shs.utils.Constants.CLIENT_DELETE_URI;
+import static fr.dwaps.shs.utils.Constants.CLIENT_EDIT_JSP;
+import static fr.dwaps.shs.utils.Constants.CLIENT_EDIT_URI;
 import static fr.dwaps.shs.utils.Constants.CLIENT_NEW_JSP;
 import static fr.dwaps.shs.utils.Constants.CLIENT_NEW_URI;
 import static fr.dwaps.shs.utils.Constants.CLIENT_ONE_JSP;
@@ -10,11 +14,13 @@ import static fr.dwaps.shs.utils.Constants.CLIENT_ONE_URI;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
+@WebServlet(urlPatterns= {"*.action"})
 public class FrontControllerServlet extends HttpServlet {
 	
 	@Override

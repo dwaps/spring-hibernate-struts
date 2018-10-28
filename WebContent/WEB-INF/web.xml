@@ -5,24 +5,20 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	id="WebApp_ID" version="2.5">
-	
+
   <display-name>shs</display-name>
   
   <welcome-file-list>
   	<welcome-file>/WEB-INF/jsp/index.jsp</welcome-file>
   </welcome-file-list>
   
-  <servlet>
-  	<servlet-name>FrontControllerServlet</servlet-name>
-  	<servlet-class>fr.dwaps.shs.controller.FrontControllerServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>FrontControllerServlet</servlet-name>
-  	<url-pattern>/client-all.action</url-pattern>
-  	<url-pattern>/client-one.action</url-pattern>
-  	<url-pattern>/client-new.action</url-pattern>
-  	<url-pattern>/client-edit.action</url-pattern>
-  	<url-pattern>/client-delete.action</url-pattern>
-  </servlet-mapping>
+  <filter>
+  	<filter-name>PrepareAndExecuteFilter</filter-name>
+  	<filter-class>fr.dwaps.shs.filter.PrepareAndExecuteFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>PrepareAndExecuteFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
   
 </web-app>
