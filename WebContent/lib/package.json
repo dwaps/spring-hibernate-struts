@@ -1,0 +1,33 @@
+{
+  "name": "shs",
+  "version": "1.0.0",
+  "description": "Application pédagogique : mise en oeuvre de Struts avec Spring et Hibernate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/dwaps/spring-hibernate-struts"
+  },
+  "keywords": [
+    "Spring",
+    "Struts",
+    "Hibernate",
+    "formation",
+    "DWAPS",
+    "travaux",
+    "pratique",
+    "java",
+    "java",
+    "ee",
+    "jee"
+  ],
+  "author": "Michael Cornillon - DWAPS Formation - contact@dwaps.fr",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1"
+  }
+}
