@@ -56,6 +56,7 @@ local.properties
 .worksheet
 
 WebContent/lib/node_modules
+WebContent/WEB-INF/classes/
 
 target/
 pom.xml.tag
