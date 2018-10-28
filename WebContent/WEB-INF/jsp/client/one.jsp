@@ -3,9 +3,9 @@
 <div class="row">
 	<div class="col text-center">
 		<h1>Détail du client</h1>
-		<a href="/shs/client-all.action" class="btn btn-info mt-5 mb-3">
+		<s:a action="client-all" class="btn btn-info mt-5 mb-3">
 			Retour à la liste
-		</a>
+		</s:a>
 	</div>
 </div>
 

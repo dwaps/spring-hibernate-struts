@@ -22,12 +22,12 @@
 					<td>Dupont</td>
 					<td>gerard@mail.fr</td>
 					<td>
-						<a href="/shs/client-one.action" class="p-1">
-							<i class="fa fa-eye"></i></a>
-						<a href="/shs/client-edit.action" class="p-1">
-							<i class="fa fa-edit"></i></a>
-						<a href="/shs/client-delete.action" class="p-1">
-							<i class="fa fa-trash"></i></a>
+						<s:a action="client-one" class="p-1">
+							<i class="fa fa-eye"></i></s:a>
+						<s:a action="client-edit" class="p-1">
+							<i class="fa fa-edit"></i></s:a>
+						<s:a action="client-delete" class="p-1">
+							<i class="fa fa-trash"></i></s:a>
 					</td>
 				</tr>
 			</tbody>
@@ -37,12 +37,12 @@
 					<td>Durand</td>
 					<td>fernand@mail.fr</td>
 					<td>
-						<a href="/shs/client-one.action" class="p-1">
-							<i class="fa fa-eye"></i></a>
-						<a href="/shs/client-edit.action" class="p-1">
-							<i class="fa fa-edit"></i></a>
-						<a href="/shs/client-delete.action" class="p-1">
-							<i class="fa fa-trash"></i></a>
+						<s:a action="client-one" class="p-1">
+							<i class="fa fa-eye"></i></s:a>
+						<s:a action="client-edit" class="p-1">
+							<i class="fa fa-edit"></i></s:a>
+						<s:a action="client-delete" class="p-1">
+							<i class="fa fa-trash"></i></s:a>
 					</td>
 				</tr>
 			</tbody>
