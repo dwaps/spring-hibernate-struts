@@ -34,8 +34,10 @@
 								<s:param name="idClient">${client.id}</s:param>
 								<i class="fa fa-eye"></i></s:a>
 							<s:a action="client-edit" cssClass="p-1">
+								<s:param name="idClient">${client.id}</s:param>
 								<i class="fa fa-edit"></i></s:a>
 							<s:a action="client-delete" cssClass="p-1">
+								<s:param name="idClient">${client.id}</s:param>
 								<i class="fa fa-trash"></i></s:a>
 						</td>
 					</tr>

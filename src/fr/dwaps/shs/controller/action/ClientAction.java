@@ -25,29 +25,48 @@ public class ClientAction {
 	}
 	
 	public String oneClient() {
-		clients.forEach(c -> {
-			if (c.getId() == idClient) {
-				client = c;
-				return;
-			}
-		});
+		findCurrentClient();
 		return "success";
 	}
 	
 	public String newClient() {
-		if (client != null) {
-			client.setId(++id);
-			clients.add(client);
+		if (client != null) {			
+			if (!updatingClient()) {
+				client.setId(++id);
+				clients.add(client);
+			}
 			return "success";
 		}
 		return "input";
 	}
 	
 	public String editClient() {
+		findCurrentClient();
 		return "success";
 	}
 	
 	public String deleteClient() {
+		findCurrentClient();
+		clients.remove(client);
 		return "success";
+	}
+	
+	private boolean updatingClient() {
+		for (int i = 0; i < clients.size(); i++) {
+			if (clients.get(i).getId() == client.getId()) {
+				clients.set(i, client);
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	private void findCurrentClient() {
+		clients.forEach(c -> {
+			if (c.getId() == idClient) {
+				client = c;
+				return;
+			}
+		});
 	}
 }

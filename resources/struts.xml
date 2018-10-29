@@ -38,7 +38,7 @@
 		
 		<action name="client-delete" class="fr.dwaps.shs.controller.action.ClientAction"
 			method="deleteClient">
-			<result name="success">/WEB-INF/jsp/client/delete.jsp</result>
+			<result name="success" type="redirectAction">client-all</result>
 		</action>
 		
 	</package>
