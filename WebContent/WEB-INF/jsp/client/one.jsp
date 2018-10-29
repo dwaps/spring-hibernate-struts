@@ -3,6 +3,10 @@
 <div class="row">
 	<div class="col text-center">
 		<h1>Détail du client</h1>
+		<p>Nom : <s:property value="lastname"/></p>
+		<p>Prénom : <s:property value="firstname"/></p>
+		<p>Pseudo : <s:property value="pseudo"/></p>
+		<p>Mot de passe : ******</p>
 		<s:a action="client-all" class="btn btn-info mt-5 mb-3">
 			Retour à la liste
 		</s:a>

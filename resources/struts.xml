@@ -5,9 +5,10 @@
 
 <struts>
 	
-	<constant name="struts.devMode" value="true"></constant>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
 	
-	<package name="default" extends="struts-default">
+	<package name="fr.dwaps.shs" namespace="/" extends="struts-default">
 		<default-action-ref name="home" />
 		
 		<action name="home">
@@ -26,7 +27,8 @@
 		
 		<action name="client-new" class="fr.dwaps.shs.controller.action.ClientAction"
 			method="newClient">
-			<result name="success">/WEB-INF/jsp/client/new.jsp</result>
+			<result name="input">/WEB-INF/jsp/client/new.jsp</result>
+			<result name="success">/WEB-INF/jsp/client/one.jsp</result>
 		</action>
 		
 		<action name="client-edit" class="fr.dwaps.shs.controller.action.ClientAction"

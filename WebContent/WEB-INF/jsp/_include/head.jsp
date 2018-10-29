@@ -8,6 +8,9 @@
 <script src="/shs/lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <style>
+	body {
+		overflow-x: hidden;
+	}
 	a {
 		color: inherit;
 		text-decoration: none;
