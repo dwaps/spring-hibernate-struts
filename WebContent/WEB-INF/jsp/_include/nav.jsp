@@ -9,10 +9,10 @@
         <a class="nav-link" href="/shs/">Accueil <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <s:a class="nav-link" action="client-new">Ajouter un client</s:a>
+        <s:a cssClass="nav-link" action="client-new">Ajouter un client</s:a>
       </li>
       <li class="nav-item">
-        <s:a class="nav-link" action="client-all">Voir les clients</s:a>
+        <s:a cssClass="nav-link" action="client-all">Voir les clients</s:a>
       </li>
     </ul>
   </div>

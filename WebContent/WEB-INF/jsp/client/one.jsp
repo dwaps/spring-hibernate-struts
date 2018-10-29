@@ -1,13 +1,13 @@
 <%@ include file="../_include/jsp-start.jsp" %>
 
 <div class="row">
-	<div class="col text-center">
-		<h1>Détail du client</h1>
+	<div class="col text-center mt-3">
+		<h3>Détail du client</h3>
 		<p>Nom : <s:property value="client.lastname"/></p>
 		<p>Prénom : <s:property value="client.firstname"/></p>
-		<p>Pseudo : <s:property value="client.pseudo"/></p>
+		<p>Email : <s:property value="client.email"/></p>
 		<p>Mot de passe : ******</p>
-		<s:a action="client-all" class="btn btn-info mt-5 mb-3">
+		<s:a action="client-all" cssClass="btn btn-info mt-5 mb-3">
 			Retour à la liste
 		</s:a>
 	</div>

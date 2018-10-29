@@ -1,1 +1,1 @@
-<h1 class="text-center">Page non trouvée !!!</h1>
+<h3 class="text-center mt-3">Page non trouvée !!!</h3>

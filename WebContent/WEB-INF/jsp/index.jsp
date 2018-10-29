@@ -2,7 +2,7 @@
 
 <div class="row">
 	<div class="col">
-		<h1 class="text-center">Bienvenue sur mon super site</h1>
+		<h3 class="text-center mt-3">Bienvenue sur mon super site</h3>
 	</div>
 </div>
 
