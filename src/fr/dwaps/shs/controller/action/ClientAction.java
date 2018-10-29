@@ -28,7 +28,10 @@ public class ClientAction {
 	}
 	
 	public String newClient() {
-		if (pseudo != null && pseudo.equalsIgnoreCase("dwaps")) {
+		if (lastname != null && !lastname.isEmpty() &&
+				firstname != null && !firstname.isEmpty() &&
+				pseudo != null && pseudo.equalsIgnoreCase("dwaps") &&
+				password != null && !password.isEmpty()) {
 			return "success";
 		}
 		return "input";
