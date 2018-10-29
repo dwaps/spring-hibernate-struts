@@ -1,23 +1,13 @@
 package fr.dwaps.shs.controller.action;
 
+import fr.dwaps.shs.model.bean.Client;
+
 public class ClientAction {
 	
-	private int id;
-	private String firstname;
-	private String lastname;
-	private String pseudo;
-	private String password;
+	private Client client;
 	
-	public void setPseudo(String pseudo) { this.pseudo = pseudo; }
-	public void setFirstname(String firstname) { this.firstname = firstname; }
-	public void setLastname(String lastname) { this.lastname = lastname; }
-	public void setPassword(String password) { this.password = password; }
-	
-	public int getId() { return id; }
-	public String getFirstname() { return firstname; }
-	public String getLastname() { return lastname; }
-	public String getPseudo() { return pseudo; }
-	public String getPassword() { return password; }
+	public void setClient(Client client) { this.client = client; }
+	public Client getClient() { return client; }
 	
 	public String allClient() {
 		return "success";
@@ -28,10 +18,7 @@ public class ClientAction {
 	}
 	
 	public String newClient() {
-		if (lastname != null && !lastname.isEmpty() &&
-				firstname != null && !firstname.isEmpty() &&
-				pseudo != null && pseudo.equalsIgnoreCase("dwaps") &&
-				password != null && !password.isEmpty()) {
+		if (client != null && client.getPseudo().equalsIgnoreCase("dwaps")) {
 			return "success";
 		}
 		return "input";

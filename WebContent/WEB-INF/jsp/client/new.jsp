@@ -11,28 +11,28 @@
 			<div class="form-group">
 				Nom
 				<input type="text"
-					name="lastname"
+					name="client.lastname"
 					class="form-control"
-					value="${lastname}" />
+					value="${client.lastname}" />
 			</div>
 			<div class="form-group">
 				Prénom
 				<input type="text"
-					name="firstname"
+					name="client.firstname"
 					class="form-control"
-					value="${firstname}" />
+					value="${client.firstname}" />
 			</div>
 			<div class="form-group">
 				Pseudo
 				<input type="text"
-					name="pseudo"
+					name="client.pseudo"
 					class="form-control"
-					value="${pseudo}" />
+					value="${client.pseudo}" />
 			</div>
 			<div class="form-group">
 				Mot de passe
 				<input type="password"
-					name="password"
+					name="client.password"
 					class="form-control" />
 			</div>
 			<button type="submit" class="btn btn-info">Valider</button>
