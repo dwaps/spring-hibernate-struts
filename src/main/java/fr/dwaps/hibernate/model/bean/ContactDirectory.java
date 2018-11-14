@@ -3,6 +3,7 @@ package fr.dwaps.hibernate.model.bean;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
@@ -25,7 +26,7 @@ public class ContactDirectory implements Serializable {
 	@Column(length=100, nullable=false, unique=true)
 	private String name;
 	
-	@OneToMany(targetEntity=Contact.class)
+	@OneToMany(targetEntity=Contact.class, cascade=CascadeType.PERSIST)
 	@JoinColumn(
 		name="cd_id",
 		referencedColumnName="id",

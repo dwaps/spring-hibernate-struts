@@ -25,8 +25,6 @@ public class MainClass {
 		try {
 			transaction.begin();
 			em.persist(rep);
-			em.persist(c1);
-			em.persist(c2);
 			transaction.commit();
 		}
 		catch (Exception e) {
