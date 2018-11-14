@@ -33,8 +33,7 @@ public class ContactDirectory implements Serializable {
 	private List<Contact> contacts;
 	
 	public ContactDirectory() {}
-	public ContactDirectory(int id, String name, List<Contact> contacts) {
-		this.id = id;
+	public ContactDirectory(String name, List<Contact> contacts) {
 		this.name = name;
 		this.contacts = contacts;
 	}

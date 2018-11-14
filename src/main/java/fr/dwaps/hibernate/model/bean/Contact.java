@@ -23,8 +23,7 @@ public class Contact implements Serializable {
 	private boolean man;
 	
 	public Contact() {}
-	public Contact(int id, String firstname, String lastname, String tel, String email, boolean man) {
-		this.id = id;
+	public Contact(String firstname, String lastname, String tel, String email, boolean man) {
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.tel = tel;
