@@ -2,9 +2,19 @@ package fr.dwaps.hibernate.model.bean;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Contact")
 public class Contact implements Serializable {
 	private static final long serialVersionUID = -2701716361603211454L;
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private String firstname;
 	private String lastname;
