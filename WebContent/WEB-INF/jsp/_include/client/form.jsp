@@ -1,5 +1,4 @@
 <form action="client-new.action" method="POST">
-	<input type="hidden" name="client.id" value="${client.id}" />
 	<div class="form-group">
 		Nom
 		<input type="text"
