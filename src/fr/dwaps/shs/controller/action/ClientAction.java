@@ -3,6 +3,8 @@ package fr.dwaps.shs.controller.action;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Persistence;
+
 import fr.dwaps.shs.model.bean.Client;
 
 public class ClientAction {
@@ -21,6 +23,7 @@ public class ClientAction {
 	public List<Client> getClients() { return clients; }
 
 	public String allClient() {
+		Persistence.createEntityManagerFactory("fr.dwaps.shs.jpa");
 		return "success";
 	}
 	
