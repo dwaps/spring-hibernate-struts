@@ -1,18 +1,21 @@
 package fr.dwaps.shs.controller.action;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Persistence;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Query;
 
 import fr.dwaps.shs.model.bean.Client;
+import fr.dwaps.shs.util.AppListener;
 
 public class ClientAction {
 	
-	private static int id = 0; // tmp
-	private static List<Client> clients = new ArrayList<>();
+	private EntityManager em = AppListener.getEmf().createEntityManager();
 	
-	private int idClient; // tmp : from url
+	private static List<Client> clients;
+	
+	private int idClient; // from url
 	private Client client;
 	
 	public void setClient(Client client) { this.client = client; }
@@ -22,54 +25,61 @@ public class ClientAction {
 	public int getIdClient() { return idClient; }
 	public List<Client> getClients() { return clients; }
 
+	@SuppressWarnings("unchecked")
 	public String allClient() {
-		Persistence.createEntityManagerFactory("fr.dwaps.shs.jpa");
+		Query query = em.createNativeQuery("SELECT * FROM client", Client.class);
+		clients = (List<Client>) query.getResultList();
 		return "success";
 	}
 	
 	public String oneClient() {
-		findCurrentClient();
+		client = em.find(Client.class, idClient);
 		return "success";
 	}
 	
 	public String newClient() {
-		if (client != null) {			
-			if (!updatingClient()) {
-				client.setId(++id);
-				clients.add(client);
+		if (client != null) {
+			EntityTransaction transaction = em.getTransaction();
+			
+			try {
+				transaction.begin();
+				System.out.println("DWAPS FORMATION ==> " + client.getId());
+				if (client.getId() > 0) {
+					Client c = em.merge(client);
+					client = c;
+				}
+				em.persist(client);
+				transaction.commit();
 			}
+			catch (Exception e) {
+				e.printStackTrace();
+				transaction.rollback();
+			}
+			
 			return "success";
 		}
 		return "input";
 	}
 	
 	public String editClient() {
-		findCurrentClient();
+		client = em.find(Client.class, idClient);
 		return "success";
 	}
 	
 	public String deleteClient() {
-		findCurrentClient();
-		clients.remove(client);
-		return "success";
-	}
-	
-	private boolean updatingClient() {
-		for (int i = 0; i < clients.size(); i++) {
-			if (clients.get(i).getId() == client.getId()) {
-				clients.set(i, client);
-				return true;
-			}
+		EntityTransaction transaction = em.getTransaction();
+		client = em.find(Client.class, idClient);
+		
+		try {
+			transaction.begin();
+			em.remove(client);
+			transaction.commit();
 		}
-		return false;
-	}
-	
-	private void findCurrentClient() {
-		clients.forEach(c -> {
-			if (c.getId() == idClient) {
-				client = c;
-				return;
-			}
-		});
+		catch (Exception e) {
+			e.printStackTrace();
+			transaction.rollback();
+		}
+		
+		return "success";
 	}
 }
