@@ -6,7 +6,7 @@
 	</div>
 </div>
 <div class="row">
-	<div class="col col-sm-4 offset-sm-4 m-1">
+	<div class="col col-sm-4 offset-sm-4 m-1 m-auto">
 		<%@ include file="../_include/client/form.jsp" %>
 	</div>
 </div>

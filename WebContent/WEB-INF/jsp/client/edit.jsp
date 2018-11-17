@@ -4,7 +4,7 @@
 	<div class="col text-center mt-3">
 		<h3>Editer le client</h3>
 		<div class="row">
-			<div class="col col-sm-4 offset-sm-4 m-1">
+			<div class="col col-sm-4 offset-sm-4 m-1 m-auto">
 				<%@ include file="../_include/client/form.jsp" %>
 			</div>
 		</div>
