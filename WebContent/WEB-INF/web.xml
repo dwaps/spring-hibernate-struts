@@ -8,6 +8,14 @@
 	
   <display-name>shs</display-name>
   
+  <listener>
+  	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+<!--   <context-param> -->
+<!--   	<param-name>ContextConfigLocation</param-name> -->
+<!--   	<param-value>classpath:/bootstrapContext.xml</param-value> -->
+<!--   </context-param> -->
+  
   <filter>
   	<filter-name>struts</filter-name>
   	<filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
