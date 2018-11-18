@@ -27,6 +27,7 @@ public class ClientAction {
 
 	@SuppressWarnings("unchecked")
 	public String allClient() {
+		System.out.println("\n\nCLIENT INJECTE PAR SPRING ===> " + client + "\n\n");
 		Query query = em.createNativeQuery("SELECT * FROM client", Client.class);
 		clients = (List<Client>) query.getResultList();
 		return "success";
